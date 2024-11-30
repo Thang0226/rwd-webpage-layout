@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, serif;
+}
+
+#menu {
+    height: 52px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: #2b2f32;
+    border: 1px solid #CDCDCD;
+    position: fixed;
+    z-index: 10;
+}
+
+#menu ul, #menu li {
+    padding: 0;
+    margin: 0;
+}
+
+/* Make ul list elements "float" to beside each other */
+#menu li {
+    position: relative;
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu li a {
+    width: 100px;
+    height: 50px;
+    display: block;     /* because <a> is not block by default */
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    margin: 0;
+    background-color: #2b2f32;
+    color: white;
+    font-size: 18px;
+}
+
+#menu ul ul li a {
+    width: 200px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+#menu li a:hover {
+    background: black;
+}
+
+/* Make sub-u-list position depend only on the parent li element */
+#menu ul ul {
+    position: absolute;
+    top: 50px;
+    visibility: hidden;
+}
+
+#menu ul li:hover ul {
+    visibility: visible;
+}
+
+#left-side, #right-side, #section {
+    padding: 5px;
+}
+
+#left-side {
+    visibility: hidden;
+}
+#section {
+    width: 100%;
+}
+#right-side {
+    visibility: hidden;
+}
+
+@media (min-width: 500px) {
+    #left-side {
+        visibility: hidden;
+    }
+    #section {
+        width: 64%;
+        position: absolute;
+        top: 50px;
+        left: 0;
+    }
+    #right-side {
+        visibility: visible;
+        width: 35%;
+        height: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    #left-side {
+        width: 30%;
+        height: 100%;
+        visibility: visible
+    }
+    #section {
+        width: 39%;
+        position: absolute;
+        top: 50px;
+        left: 30.5%;
+    }
+    #right-side {
+        width: 30%;
+        height: 100%;
+        visibility: visible;
+    }
+}
+
+#left-side {
+    background: lightgray;
+    position: fixed;
+    top: 50px;
+    left: 0;
+}
+
+#section {
+
+    text-align: justify;
+}
+
+#right-side {
+    background: lightgray;
+    position: fixed;
+    top: 50px;
+    right: 0;
+}
+
+#right-side div {
+    margin: 20px;
+    height: 200px;
+    background: #dfc2c4;
+    text-align: center;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #2b2f32;
+    color: white;
+    height: 40px;
+}
+
+#footer p {
+    text-align: center;
+    line-height: 40px;
+}
